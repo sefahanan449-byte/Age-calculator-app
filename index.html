@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Age Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,800&display=swap" rel="stylesheet" />
+</head>
+
+<body class="flex min-h-screen items-center justify-center bg-off-white p-4 font-poppins">
+  <main class="w-full max-w-[840px] rounded-2xl rounded-br-[100px] bg-white p-6 py-12 md:rounded-br-[200px] md:p-14">
+
+    <form id="form" novalidate>
+      <!-- Inputs -->
+      <div class="grid grid-cols-3 gap-4 md:flex md:gap-8">
+
+        <div class="group md:w-40" data-error="false">
+          <label for="day" class="block text-xs font-bold uppercase tracking-[0.25em] text-smokey group-data-[error=true]:text-light-red">Day</label>
+          <input id="day" type="text" inputmode="numeric" maxlength="2" placeholder="DD"
+            class="mt-2 w-full rounded-lg border border-light-grey px-4 py-3 text-xl font-bold text-off-black placeholder:text-smokey/60 hover:border-purple focus:border-purple focus:outline-none group-data-[error=true]:border-light-red md:text-3xl" />
+          <p class="error mt-2 min-h-4 text-[10px] italic text-light-red md:text-xs"></p>
+        </div>
+
+        <div class="group md:w-40" data-error="false">
+          <label for="month" class="block text-xs font-bold uppercase tracking-[0.25em] text-smokey group-data-[error=true]:text-light-red">Month</label>
+          <input id="month" type="text" inputmode="numeric" maxlength="2" placeholder="MM"
+            class="mt-2 w-full rounded-lg border border-light-grey px-4 py-3 text-xl font-bold text-off-black placeholder:text-smokey/60 hover:border-purple focus:border-purple focus:outline-none group-data-[error=true]:border-light-red md:text-3xl" />
+          <p class="error mt-2 min-h-4 text-[10px] italic text-light-red md:text-xs"></p>
+        </div>
+
+        <div class="group md:w-40" data-error="false">
+          <label for="year" class="block text-xs font-bold uppercase tracking-[0.25em] text-smokey group-data-[error=true]:text-light-red">Year</label>
+          <input id="year" type="text" inputmode="numeric" maxlength="4" placeholder="YYYY"
+            class="mt-2 w-full rounded-lg border border-light-grey px-4 py-3 text-xl font-bold text-off-black placeholder:text-smokey/60 hover:border-purple focus:border-purple focus:outline-none group-data-[error=true]:border-light-red md:text-3xl" />
+          <p class="error mt-2 min-h-4 text-[10px] italic text-light-red md:text-xs"></p>
+        </div>
+
+      </div>
+
+      <!-- Divider + submit button -->
+      <div class="relative my-12 border-t border-light-grey md:my-14">
+        <button type="submit" aria-label="Calculate age"
+          class="absolute -top-8 left-1/2 flex h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full bg-purple transition hover:bg-off-black focus:outline-none focus-visible:ring-4 focus-visible:ring-purple/40 md:-top-12 md:left-auto md:right-0 md:h-24 md:w-24 md:translate-x-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 44" class="h-6 w-6 md:h-11 md:w-11">
+            <g fill="none" stroke="#FFF" stroke-width="2">
+              <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
+            </g>
+          </svg>
+        </button>
+      </div>
+    </form>
+
+    <!-- Results -->
+    <div class="text-[56px] font-extrabold italic leading-[1.1] text-off-black md:text-[104px]">
+      <p><span id="years" class="text-purple">--</span> years</p>
+      <p><span id="months" class="text-purple">--</span> months</p>
+      <p><span id="days" class="text-purple">--</span> days</p>
+    </div>
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
